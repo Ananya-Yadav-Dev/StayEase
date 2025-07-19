@@ -23,6 +23,7 @@ body{
     color: #222222 !important;
 }
 
+/*Footer*/
 .footer-container{
     background-color: #ebebeb;
     display: flex;
@@ -41,12 +42,13 @@ body{
 }
 
 .f-company{
-    margin-top: 8px;
+    margin-top: 4px;
     font-weight: 400;
 }
 
 .f-info-links{
-    margin-bottom: 16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .f-info-links a{
@@ -54,16 +56,22 @@ body{
     color: #222222;
 }
 
+.f-info-links a:hover{
+    text-decoration:underline;
+}
+
+
 /* Card */
-.card{
+.listing-card{
     border: none !important;
     margin-bottom: 2rem;
 }
 
 .card-img-top{
-    width: 100% !important;
-    object-fit: cover !important;
     border-radius: 1rem !important;
+    width: 100% !important;
+    max-height: 440px;
+    object-fit: cover !important;
 }
 
 .card-body{
@@ -71,7 +79,7 @@ body{
 }
 
 .card-text{
-    font-weight: 400;
+    font-weight: 400 !important;
 }
 
 .listing-link{
