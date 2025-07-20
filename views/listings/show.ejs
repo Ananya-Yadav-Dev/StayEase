@@ -15,7 +15,7 @@
       </p>
     </div>
   </div>
-  <b r />
+  <br/>
 </div>
 
 <div class="btns row">
@@ -71,7 +71,7 @@
           <p div="card-text"><%=review.comment%></p>
           <p div="card-text"><%=review.rating%> stars</p>
           <form class="mb-3" method="post" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
-            <button class="btn btn-dark btn-sm">Delete</button>
+            <button class="btn btn-dark btn-sm review-btn">Delete</button>
           </form>
         </div>
       </div>
