@@ -123,9 +123,9 @@ body{
 }
 
 .loginCard {
-  background: #fff;
+  background: #aca9a9;
   border-radius: 8px;
-  padding: 30px 25px;
+  padding: 28px 25px;
   width: 350px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
@@ -138,8 +138,7 @@ body{
   letter-spacing: 1.2px;
   font-weight: 600;
   padding: 24px;
-  margin: -30px -25px 20px -25px;
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px;
 }
 
 .form-group {
