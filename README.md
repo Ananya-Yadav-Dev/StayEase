@@ -16,6 +16,7 @@
 
   * `Listing`
   * `Review`
+  * `User`
 
 ---
 
@@ -26,6 +27,7 @@ wandarlust/
 ├── models/        # Mongoose schemas for Listings and Reviews
 │   ├── Listing.js
 │   └── Review.js
+|   └── User.js
 ├── routes/        # Express route handlers
 ├── views/         # EJS templates
 ├── public/        # Static files (CSS, JS, images)
