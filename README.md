@@ -1,17 +1,19 @@
-
 # 🌍 Wandarlust
 
-**Wandarlust** is a full-stack travel listing web application where users can perform CRUD operations on destinations, leave reviews, and experience robust error handling on both server and client sides. It uses cookies for session management and includes utilities for better code modularity.
+**Wandarlust** is a full-stack travel listing web application where users can perform CRUD operations on destinations, leave reviews, and enjoy robust server-side and client-side error handling. It uses cookies for session management, supports user authentication, and includes modular utilities for better maintainability. Images are hosted on **Cloudinary** for optimized storage and delivery.
 
 ---
+
 ![Website Preview](./public/assets/preview.png)
 
 ## 🚀 Features
 
 * ✍️ **Add, Edit, Delete Travel Listings**
 * ⭐ **Post & Manage User Reviews**
+* 🔒 **User Authentication & Session Management**
 * ⚠️ **Server-side & Client-side Error Handling**
 * 🍪 **Cookie Management & Middleware**
+* ☁️ **Cloudinary Image Upload & Storage**
 * 🧩 **Mongoose Models:**
 
   * `Listing`
@@ -24,17 +26,24 @@
 
 ```
 wandarlust/
-├── models/        # Mongoose schemas for Listings and Reviews
-│   ├── Listing.js
-│   └── Review.js
-|   └── User.js
-├── routes/        # Express route handlers
-├── views/         # EJS templates
-├── public/        # Static files (CSS, JS, images)
+├── controllers/   # Route logic & handlers
 ├── init/          # Dummy data initializer
 │   └── index.js
+├── models/        # Mongoose schemas
+├── node_modules/  # Installed dependencies
+├── public/        # Static files (CSS, JS, images)
+├── routes/        # Express route definitions
 ├── utils/         # Utility functions/helpers
+├── views/         # EJS templates
+├── .env           # Environment variables (MongoDB URI, Cloudinary keys)
 ├── app.js         # Main server file
+├── cloudConfig.js # Cloudinary configuration
+├── middleware.js  # Express middleware
+├── schema.js      # Any schema helpers
+├── test.js        # Test scripts (if any)
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
 ---
@@ -43,30 +52,38 @@ wandarlust/
 
 1. **Clone the Repository:**
 
-   ```bash
-   git clone https://github.com/yourusername/wandarlust.git
-   cd wandarlust
-   ```
+```bash
+git clone https://github.com/Ananya-Yadav-Dev/WanderLust.git
+```
 
 2. **Install Dependencies:**
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-3. **Initialize Dummy Data:**
+3. **Setup Environment Variables**
 
-   ```bash
-   cd init
-   node index.js
-   cd ..
-   ```
+Create a `.env` file in the root with:
 
-4. **Start the Server:**
+```
+MONGO_URI=your_mongodb_connection_string
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+```
 
-   ```bash
-   nodemon app.js
-   ```
+4. **Initialize Dummy Data:**
+
+```bash
+node init/index.js
+```
+
+5. **Start the Server:**
+
+```bash
+nodemon app.js
+```
 
 ---
 
@@ -75,12 +92,12 @@ wandarlust/
 * **Backend:** Node.js, Express
 * **Frontend:** EJS, HTML/CSS
 * **Database:** MongoDB with Mongoose
-* **Extras:** Cookie-based sessions, Middleware, Modular Utilities
+* **Extras:** Cookie-based sessions, Middleware, Modular Utilities, Cloudinary Image Upload
 
 ---
 
 ## 🤝 Contributions & Issues
 
-Feel free to fork, contribute, or raise issues to help improve **Wandarlust**.
+Feel contribute, or raise issues to help improve **Wandarlust**.
 Every contribution makes a difference!
 
