@@ -1,29 +1,76 @@
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+<nav class="navbar navbar-expand-md border-bottom sticky-top">
+  <div class="container-fluid d-flex justify-content-between">
+      <a class="Logo" href="/listings">
+      <img src="/assets/Logo_wanderlust.png" alt="Logo" height="110" />
+    </a>
     <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
     >
-    <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="/listings">Home</a>
-        <a class="nav-link" href="/listings">All Listing</a>
-        <a class="nav-link" href="/listings/new">Add new listing</a>
+
+    <!-- Categories Bar -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="py-2 px-1 category ms-auto">
+        <div class="container d-flex justify-content-center gap-4">
+          <a
+            class="text-decoration-none navIcon"
+            href="/listings/category/Nature"
+          >
+            <i class="fa fa-tree me-1"></i> Nature
+          </a>
+          <a
+            class="text-decoration-none navIcon"
+            href="/listings/category/Urban"
+          >
+            <i class="fa fa-city me-1"></i> Urban
+          </a>
+          <a
+            class="text-decoration-none navIcon"
+            href="/listings/category/Beach"
+          >
+            <i class="fa fa-umbrella-beach me-1"></i> Beach
+          </a>
+          <a
+            class="text-decoration-none navIcon"
+            href="/listings/category/Luxury"
+          >
+            <i class="fa fa-gem me-1"></i> Luxury
+          </a>
+          <a
+            class="text-decoration-none navIcon"
+            href="/listings/category/Other"
+          >
+            <i class="fa fa-ellipsis-h me-1"></i> Other
+          </a>
+        </div>
       </div>
-      <div class="navbar-nav ms-auto">
-        <% if(!currUser) { %>
-        <a class="nav-link" href="/signup">Sign Up</a>
-        <a class="nav-link" href="/login">Log in</a>
+
+
+    <!-- Right Side -->
+      <ul class="navbar-nav right ms-auto">
+        <a class="nav-link text-decoration-none" href="/listings/new"
+          >List Your Property</a
+        >
+        <% if (!currUser) { %>
+        <li class="nav-item">
+          <a class="nav-link btn-primary" href="/signup">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Log In</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Log Out</a>
+        </li>
         <% } %>
-        <% if(currUser) { %>
-        <a class="nav-link" href="/logout">Log out</a>
-        <% } %>
+      </ul>
       </div>
-    </div>
   </div>
 </nav>

@@ -1,3 +1,8 @@
+if (process.env.NODE_ENV != "production"){
+  require("dotenv").config();
+}
+
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -18,19 +23,22 @@ const userRouter = require("./routes/user.js");
 
 // const listEndpoints = require("express-list-endpoints");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
-
-main()
-  .then(() => {
-    console.log("Connected to Database");
-  })
-  .catch((err) => {
-    console.log("Error:", err);
-  });
+// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+const MONGO_URL = process.env.MONGO_URL;
 
 async function main() {
-  await mongoose.connect(MONGO_URL);
+  try {
+    await mongoose.connect(MONGO_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Connected to MongoDB Atlas");
+  } catch (err) {
+    console.error("Database connection error:", err);
+  }
 }
+
+main();
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -80,11 +88,12 @@ app.use((req,res,next)=>{
 //   res.send(newUser);
 // })
 
+//Reviews
+app.use("/listings/:id/reviews",reviewRouter);
+
 //Listings
 app.use("/listings",listingRouter);
 
-//Reviews
-app.use("/listings/:id/reviews",reviewRouter);
 
 //Users
 app.use("/",userRouter);
