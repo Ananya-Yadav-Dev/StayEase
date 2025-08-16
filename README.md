@@ -3,6 +3,8 @@
 **Wandarlust** is a full-stack travel listing web application where users can perform CRUD operations on destinations, leave reviews, and enjoy robust server-side and client-side error handling. It uses cookies for session management, supports user authentication, and includes modular utilities for better maintainability. Images are hosted on **Cloudinary** for optimized storage and delivery.
 
 ---
+## 🚀 Live Demo
+Check out the live version of the project here: [Wanderlust Live](https://wanderlust-k1mg.onrender.com)
 
 ![Website Preview](./public/assets/preview.png)
 
