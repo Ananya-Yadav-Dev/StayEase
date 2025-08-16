@@ -15,6 +15,7 @@ const flash = require("connect-flash");
 const passport = require("passport");//pbkdf2 hashing algorithm
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const Listing = require("./models/listing.js");
 
 
 const listingRouter = require("./routes/listing.js");
@@ -56,11 +57,6 @@ const sessionOptions = {
   httpOnly: true
 };
 
-
-app.get("/", (req, res) => {
-  res.send("hi,i am root");
-});
-
 app.use(session(sessionOptions));
 app.use(flash());
 
@@ -87,6 +83,10 @@ app.use((req,res,next)=>{
 //   let newUser = await User.register(fakeUser,"Helloworld");
 //   res.send(newUser);
 // })
+app.get("/", async (req, res) => {
+  const allListings = await Listing.find({});
+  res.render("listings/index.ejs", { allListings });
+});
 
 //Reviews
 app.use("/listings/:id/reviews",reviewRouter);
